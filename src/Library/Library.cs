@@ -16,23 +16,37 @@ namespace src.Library
       users = new List<Person>();
     }
 
-    public void AddBook(Book book)
+    public void AddBook(Book book, Librarian librarian)
     {
-      books.Add(book);
-      Console.WriteLine($"{book.Title} added");
-    }
-
-    public void RemoveBook(string bookId)
-    {
-      Book book = FindBookById(bookId);
-      if (book != null)
+      if (users.Contains(librarian))
       {
-        books.Remove(book);
-        Console.WriteLine($"{book.Title} removed");
+        books.Add(book);
+        Console.WriteLine($"{book.Title} added");
       }
       else
       {
-        Console.WriteLine($"Book ID {bookId} not found");
+        Console.WriteLine("Can't add book since librarian doesn't work here");
+      }
+    }
+
+    public void RemoveBook(string bookId, Librarian librarian)
+    {
+      Book book = FindBookById(bookId);
+      if (users.Contains(librarian))
+      {
+        if (book != null)
+        {
+          books.Remove(book);
+          Console.WriteLine($"{book.Title} removed");
+        }
+        else
+        {
+          Console.WriteLine($"Book ID {bookId} not found");
+        }
+      }
+      else
+      {
+        Console.WriteLine("Can't remove book since librarian doesn't work here");
       }
     }
 
@@ -41,7 +55,7 @@ namespace src.Library
       Book book = FindBookById(bookId);
       if (book != null && book is IBorrowable borrowable)
       {
-        if (!_borrowedBooks.Contains(book))
+        if (!_borrowedBooks.Contains(book) && users.Contains(customer))
         {
           _borrowedBooks.Add(book);
           customer.BorrowedBooks.Add(book);
@@ -49,12 +63,12 @@ namespace src.Library
         }
         else
         {
-          Console.WriteLine("Book already borrowed");
+          Console.WriteLine("Book already borrowed or you are not our customer");
         }
       }
       else
       {
-        Console.WriteLine($"Book ID {bookId} not found");
+        Console.WriteLine($"Book ID {bookId} not found or book is not borrowable");
       }
     }
 

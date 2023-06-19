@@ -1,4 +1,3 @@
-using src.Library;
 using src.Books;
 
 namespace src.Users
@@ -11,12 +10,12 @@ namespace src.Users
 
     public void AddBook(Book book)
     {
-      Library.AddBook(book);
+      Library.AddBook(book, this);
     }
 
     public void RemoveBook(string bookId)
     {
-      Library.RemoveBook(bookId);
+      Library.RemoveBook(bookId, this);
     }
 
     public void EditBook(string bookId, string? newTitle = null, string? newAuthor = null, string? newPublicationYear = null)
