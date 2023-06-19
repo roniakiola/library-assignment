@@ -1,7 +1,7 @@
-namespace src.Person
-{
-  public class Customer : Person
-  {
+// namespace src.Person
+// {
+//   public class Customer : Person
+//   {
 
-  }
-}
+//   }
+// }

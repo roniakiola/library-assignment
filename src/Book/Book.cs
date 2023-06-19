@@ -6,22 +6,20 @@ namespace src.Book
     public string Author { get; set; }
     public string ISBN { get; set; }
     public string PublicationYear { get; set; }
-    public bool CanBorrow { get; set; }
-    public bool CanPrint { get; set; }
+    public virtual bool CanBorrow { get; }
+    public virtual bool CanPrint { get; }
 
-    public Book(string title, string author, string isbn, string publicationYear, bool canBorrow, bool canPrint)
+    public Book(string title, string author, string isbn, string publicationYear)
     {
       Title = title;
       Author = author;
       ISBN = isbn;
       PublicationYear = publicationYear;
-      CanBorrow = canBorrow;
-      CanPrint = canPrint;
     }
 
     public virtual void PrintInfo()
     {
-      Console.WriteLine($"Title: {Title}, Author: {Author}, ISBN: {ISBN}, Publication Year: {PublicationYear}");
+      Console.Write($"Title: {Title}, Author: {Author}, ISBN: {ISBN}, Publication Year: {PublicationYear}");
     }
   }
 }

@@ -1,2 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using src.Book;
+
+Comic comic = new Comic("title", "author", "1", "1997", "John Doe");
+comic.PrintInfo();
