@@ -11,14 +11,14 @@ namespace src.Books
       Genre = genre;
     }
 
-    public void Borrow()
+    public string Borrow()
     {
-      Console.WriteLine($"Borrowed novel: {Title}");
+      return $"borrowed novel: {Title}";
     }
 
-    public void Return()
+    public string Return()
     {
-      Console.WriteLine($"Returned novel: {Title}");
+      return $"returned novel: {Title}";
     }
 
     public override void PrintInfo()

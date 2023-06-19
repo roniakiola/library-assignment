@@ -12,14 +12,14 @@ namespace src.Books
       PrintablePages = printablePages;
     }
 
-    public void Borrow()
+    public string Borrow()
     {
-      Console.WriteLine($"Borrowed textbook: {Title}");
+      return $"borrowed textbook: {Title}";
     }
 
-    public void Return()
+    public string Return()
     {
-      Console.WriteLine($"Returned textbook: {Title}");
+      return $"returned textbook: {Title}";
     }
 
     public void PrintPages(int startPage, int endPage)

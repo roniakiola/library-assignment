@@ -5,9 +5,9 @@ namespace src.Library
 {
   public class Library
   {
-    public List<Book> books { get; set; }
+    private List<Book> books { get; set; }
     private List<Book> _borrowedBooks { get; set; }
-    public List<Person> users { get; set; }
+    private List<Person> users { get; set; }
 
     public Library()
     {
@@ -45,7 +45,7 @@ namespace src.Library
         {
           _borrowedBooks.Add(book);
           customer.BorrowedBooks.Add(book);
-          borrowable.Borrow();
+          Console.WriteLine($"{customer.Name} {borrowable.Borrow()}");
         }
         else
         {
@@ -67,7 +67,7 @@ namespace src.Library
         {
           _borrowedBooks.Remove(book);
           customer.BorrowedBooks.Remove(book);
-          borrowable.Return();
+          Console.WriteLine($"{customer.Name} {borrowable.Return()}");
         }
         else
         {

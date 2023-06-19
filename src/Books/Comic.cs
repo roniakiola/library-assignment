@@ -11,14 +11,14 @@ namespace src.Books
       Artist = artist;
     }
 
-    public void Borrow()
+    public string Borrow()
     {
-      Console.WriteLine($"Borrowed comic: {Title}");
+      return $"borrowed comic: {Title}";
     }
 
-    public void Return()
+    public string Return()
     {
-      Console.WriteLine($"Returned comic: {Title}");
+      return $"returned comic: {Title}";
     }
 
     public override void PrintInfo()
