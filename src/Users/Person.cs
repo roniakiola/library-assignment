@@ -1,4 +1,4 @@
-namespace src.Person
+namespace src.Users
 {
   public abstract class Person
   {

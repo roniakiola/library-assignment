@@ -1,12 +1,12 @@
-namespace src.Book
+namespace src.Books
 {
   public class Novel : Book, IBorrowable
   {
     public string Genre { get; set; }
     public override bool CanBorrow => true;
 
-    public Novel(string title, string author, string isbn, string publicationYear, string genre)
-        : base(title, author, isbn, publicationYear)
+    public Novel(string title, string author, string publicationYear, string genre)
+        : base(title, author, publicationYear)
     {
       Genre = genre;
     }

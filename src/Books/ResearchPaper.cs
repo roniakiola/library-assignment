@@ -1,12 +1,12 @@
-namespace src.Book
+namespace src.Books
 {
   public class ResearchPaper : Book, IPrintable
   {
     public int PrintablePages { get; set; }
     public override bool CanPrint => true;
 
-    public ResearchPaper(string title, string author, string isbn, string publicationYear, int printablePages)
-        : base(title, author, isbn, publicationYear)
+    public ResearchPaper(string title, string author, string publicationYear, int printablePages)
+        : base(title, author, publicationYear)
     {
       PrintablePages = printablePages;
     }

@@ -1,4 +1,4 @@
-namespace src.Book
+namespace src.Books
 {
   public class TextBook : Book, IBorrowable, IPrintable
   {
@@ -6,8 +6,8 @@ namespace src.Book
     public override bool CanBorrow => true;
     public override bool CanPrint => true;
 
-    public TextBook(string title, string author, string isbn, string publicationYear, int printablePages)
-        : base(title, author, isbn, publicationYear)
+    public TextBook(string title, string author, string publicationYear, int printablePages)
+        : base(title, author, publicationYear)
     {
       PrintablePages = printablePages;
     }
