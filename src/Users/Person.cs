@@ -3,12 +3,12 @@ namespace src.Users
   public abstract class Person
   {
     public string Name { get; set; }
-    public int ID { get; private set; }
+    public string ID { get; private set; }
 
-    public Person(string name, int id)
+    public Person(string name)
     {
       Name = name;
-      ID = id;
+      ID = Guid.NewGuid().ToString();
     }
   }
 }

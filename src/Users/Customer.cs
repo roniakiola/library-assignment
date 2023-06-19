@@ -1,10 +1,26 @@
+using src.Books;
+using src.Library;
+
 namespace src.Users
 {
   public class Customer : Person
   {
-    public Customer(string name, int id) : base(name, id)
-    {
+    public List<Book> BorrowedBooks { get; set; }
+    public static Library.Library Library { get; set; }
 
+    public Customer(string name) : base(name)
+    {
+      BorrowedBooks = new List<Book>();
+    }
+
+    public void BorrowBook(string bookId)
+    {
+      Library.BorrowBook(bookId, this);
+    }
+
+    public void ReturnBook(string bookId)
+    {
+      Library.ReturnBook(bookId, this);
     }
   }
 }
